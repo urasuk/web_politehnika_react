@@ -1,0 +1,197 @@
+
+.main__form .btn {
+    display: inline-block;
+    height: 44px;
+    line-height: 44px;
+    border-radius: 24px;
+    -webkit-box-shadow: 0px 5px 1px #000;
+    box-shadow: 0px 5px 1px #000;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    text-transform: uppercase;
+    color: white;
+    padding: 0 30px;
+    margin-bottom: 30px;
+    letter-spacing: 2.8px;
+}
+
+.main__form .btn span {
+    background: url("../img/arrow.svg") right no-repeat;
+    padding: 0 30px 0 0;
+}
+
+.main__form .btn:hover {
+    -webkit-transition: background 0.3s;
+    transition: background 0.3s;
+}
+
+.main__form .btn:active {
+    position: relative;
+    top: 3px;
+    -webkit-box-shadow: 0px 2px 1px #000;
+    box-shadow: 0px 2px 1px #000;
+}
+
+
+
+/* Note React */
+/*.content {*/
+/*    background: -webkit-gradient(linear, left bottom, left top, from(#b094f1), to(#8aedff));*/
+/*    background: linear-gradient(0deg, #b094f1 0%, #8aedff 100%);*/
+/*}*/
+/*.header {*/
+/*    background: #8aedff;*/
+/*}*/
+
+/* Note React */
+.content__background{
+        background: -webkit-gradient(linear, left bottom, left top, from(#b094f1), to(#8aedff));
+        background: linear-gradient(0deg, #b094f1 0%, #8aedff 100%);
+}
+
+
+/*.main__row {*/
+/*    display: -webkit-box;*/
+/*    display: -ms-flexbox;*/
+/*    display: flex;*/
+/*    -webkit-box-align: center;*/
+/*    -ms-flex-align: center;*/
+/*    align-items: center;*/
+/*    -ms-flex-wrap: wrap-reverse;*/
+/*    flex-wrap: wrap-reverse;*/
+/*    -ms-flex-pack: distribute;*/
+/*    justify-content: space-around;*/
+
+/*    !* Note React *!*/
+/*    padding-top: 50px;*/
+/*    padding-bottom: 50px;*/
+/*}*/
+.main__row_for_login_signup{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-wrap: wrap-reverse;
+    flex-wrap: wrap-reverse;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+
+    /* Note React */
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.main__form {
+    -ms-flex-preferred-size: 40%;
+    flex-basis: 40%;
+    min-width: 300px;
+    line-height: 50px;
+    font-size: 30px;
+}
+
+.main__form h1 {
+    text-align: center;
+    font-weight: bold;
+    font-size: 50px;
+    line-height: 60px;
+    margin-bottom: 25px;
+}
+
+@media (max-width: 930px) {
+    .main__form {
+        -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+    }
+}
+
+.main__form .btn {
+    background-color: #01c0ff;
+    font-size: 16px;
+}
+
+.main__form .btn:hover {
+    background-color: #0182ad;
+}
+
+.main__form .btn:active {
+    background-color: #d0d0d0;
+}
+
+.main__form .btn__modifier {
+    margin: 0 0 20px 40%;
+}
+
+.main__form input {
+    display: block;
+    min-width: 250px;
+    max-width: 500px;
+    padding: 10px;
+    margin: 10px auto;
+    border: 2px solid #000;
+    border-radius: 7px;
+}
+
+.main__image {
+    -ms-flex-preferred-size: 60%;
+    flex-basis: 60%;
+    min-width: 340px;
+}
+
+.main__image img {
+    max-width: 100%;
+    padding: 50px 0;
+}
+
+@media (max-width: 930px) {
+    .main__image {
+        -ms-flex-preferred-size: 80%;
+        flex-basis: 80%;
+    }
+}
+
+.main__notification {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    width: 25%;
+    height: 150px;
+}
+
+.notification__body {
+    border: 2px solid #000;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.734);
+}
+
+.notification__message {
+    margin: 25px 0 0 0;
+    text-align: center;
+    color: #04b648;
+    font-weight: 700;
+    padding: 0 0 30px 0;
+}
+
+.btn__login_ok {
+    display: block;
+    margin: 0 auto;
+    width: 100px;
+    height: 50px;
+    border: 1px solid #1d3a24;
+    border-radius: 10px;
+    background-color: rgba(6, 239, 80, 0.595);
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.btn__login_ok:hover {
+    background-color: rgba(0, 215, 50, 0.844);
+}
+
+.btn__login_ok:active {
+    -webkit-box-shadow: 0px 3px 6px #000;
+    box-shadow: 0px 3px 6px #000;
+}
