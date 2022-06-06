@@ -65,9 +65,7 @@ function SignUp(){
         console.log("input_item.getAttribute('required')")
         signupQuery().then((response) => {
             console.log("then ->" + response['token']);
-            setTimeout(() => {
-                window.location.replace("/main");
-            }, 500)
+            window.location.replace("/account");
         })
             .catch((e) => {
                 console.log("error ->" + e)

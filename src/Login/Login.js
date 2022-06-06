@@ -74,7 +74,15 @@ function Login() {
             // log out
             localStorage.removeItem('token');
             localStorage.removeItem('email');
-            // location.reload();
+            localStorage.removeItem('userStatus');
+            localStorage.removeItem('userId');
+            if (localStorage.getItem('orderId')){
+                localStorage.removeItem('orderId');
+            }
+            if (localStorage.getItem('products')){
+                localStorage.removeItem('products');
+            }
+
             window.location.reload();
         } else {
             // log in
@@ -106,9 +114,7 @@ function Login() {
         // loginNotificationBlock.style.display = 'none';
         mainNotificationRef.current.style.display = 'none';
         if (loggedIn) {
-            setTimeout(() => {
-                window.location.replace("/main");
-            }, 500)
+            window.location.replace("/account");
         }
     };
 

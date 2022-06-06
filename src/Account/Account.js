@@ -38,6 +38,8 @@ function Account() {
                     reject(xhr.response);
                 } else {
                     const responseObject = JSON.parse(xhr.response);
+                    localStorage.setItem('userStatus',responseObject.userstatus)
+                    localStorage.setItem('userId',responseObject.uid)
                     resolve({"data": xhr.response});
                 }
             }
@@ -55,6 +57,7 @@ function Account() {
         event.preventDefault();
         getUserData(URL_USER)
             .then((response) => {
+                console.log("then ->" + typeof response['data']);
                 console.log("then ->" + response['data']);
                 setUserData(response['data']);
             })
@@ -109,6 +112,7 @@ function Account() {
             console.log("then ->" + response['data']);
             localStorage.removeItem('token');
             localStorage.removeItem('email');
+            localStorage.removeItem('userId');
             setTimeout(() => {
                 window.location.replace("./index.html");
             }, 500)
@@ -227,7 +231,7 @@ function Account() {
                             // log out
                             localStorage.removeItem('token');
                             localStorage.removeItem('email');
-                            window.location.replace("./login.html");
+                            window.location.replace("/login");
                             console.log(" log out please -> " + response);
                         }
                         console.log(" RESPONSE -> " + response);
