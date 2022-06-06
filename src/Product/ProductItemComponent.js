@@ -1,18 +1,17 @@
 import './ProductItemComponent.css';
-// import productPicture from "../img/pharmacy/img_0(0).webp";
-import {BrowserRouter as Router, Routes, Route, Link, NavLink} from "react-router-dom";
-
 
 function ProductItemComponent(props){
-    // let imageName = require("../img/pharmacy/img_0(0).webp");
     const finalProducts = props.data.map( productItem =>
-                <a className="product__col" key={productItem.imagePath} href="/productDetails">
+                <a className="product__col" key={productItem.imageName}
+                   href={`/productInfo/${productItem.name}/${productItem.price}
+                   /${productItem.category}/${productItem.manufacturer}/${productItem.productDetails}
+                   /${productItem.demand}/${productItem.mid}/${productItem.imageName.replace(/\//g, '@')}`}>
                     <div className="product__image">
-                        {/*<img key={productItem.imagePath} src={require(productItem.imagePath)} alt=""/>*/}
-                        <img key={productItem.imagePath} src={productItem.imagePath} alt=""/>
+                        {/*<img key={productItem.imagePath} src={productItem.imagePath} alt=""/>*/}
+                        <img key={productItem.imageName} src={`https://i.postimg.cc${productItem.imageName}`} alt=""/>
                     </div>
-                    <h4 className="product-name">{productItem.productName}</h4>
-                    <p className="product-price">{productItem.productPrice}</p>
+                    <h4 className="product-name">{productItem.name}</h4>
+                    <p className="product-price">{parseInt(productItem.price) + ' грн'}</p>
                 </a>
             );
     return(

@@ -14,22 +14,14 @@ import React from "react";
 import {BrowserRouter as Router, Routes, Route, Link, NavLink} from "react-router-dom";
 
 
+
 function Header(){
 
-    // let menuOptions =React.createRef();
+
     let [options,setOptions] = React.useState(); // даний стейт зберігає html код з NavLink-ами
 
     function changeHeader(){
-         // const headerOptionsElement = menuOptions.current;
-        // headerOptionsElement.innerHTML = "";
         if(localStorage.getItem('token') === null){
-            // headerOptionsElement.insertAdjacentHTML("beforeend",
-            //         '<NavLink className="option" to="/main" > Home </NavLink>' +
-            //         '<NavLink className="option" to="/products"> Products </NavLink>' +
-            //         '<NavLink className="option" to="/login"> Log in </NavLink>' +
-            //         '<NavLink className="option" to="/signup"> Sign up </NavLink>'
-            // );
-
             setOptions(
                 <>
                     <NavLink className="option" to="/main" > Home </NavLink>
@@ -38,12 +30,6 @@ function Header(){
                     <NavLink className="option" to="/signup"> Sign up </NavLink>
                 </>)
         } else {
-            // headerOptionsElement.insertAdjacentHTML("beforeend",
-            //     '<NavLink className="option" to="/main" > Home </NavLink>' +
-            //     '<NavLink className="option" to="/products"> Products </NavLink>' +
-            //     '<NavLink className="option" to="/login"> Log out </NavLink>' +
-            //     '<NavLink className="option" to="/account"> Account </NavLink>' +
-            //     '<NavLink className="menu__cart" to="/cart"></NavLink>')
             setOptions(
                 <>
                     <NavLink className="option" to="/main" > Home </NavLink>
@@ -55,6 +41,9 @@ function Header(){
         }
 
     }
+
+
+
 
     return(
         <Router>
@@ -79,7 +68,8 @@ function Header(){
                 <Route path={"/account"} element={<Account/>}/>
                 <Route path={"/products"} element={<Products/>}/>
                 <Route path={"/cart"} element={<ShoppingCart/>}/>
-                <Route path={"/productDetails"} element={<ProductDetails/>}/>
+                <Route path={`/productInfo/:name/:price/:category/:manufacturer/:productDetails/:demand/:mid/:imageName`}
+                       element={<ProductDetails/>}/>
             </Routes>
         </Router>
 

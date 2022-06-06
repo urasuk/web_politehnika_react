@@ -1,8 +1,11 @@
 import './App.css';
 import Header from "./Header/Header";
 import Footer from "./Footer/Footer";
+import {useState} from "react";
+
 
 function App() {
+
   return (
       < div className="wrapper">
           {/*  <header className="header">*/}
@@ -44,7 +47,7 @@ function App() {
           {/*    </Routes>*/}
           {/*</Router>*/}
           {/*<MainPage/>*/}
-        <Header  />
+        <Header/>
         <Footer/>
       </div>
   );

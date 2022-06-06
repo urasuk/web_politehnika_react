@@ -11,6 +11,7 @@ function Testimonial(props) {
                     {reviewItem.reviewText}
                 </div>
                 <div className="rate">
+                    {/*<img src={'https://i.postimg.cc/mtp2xSnH/converted-star-solid.png'} alt=""/>*/}
                     <img src={reviewItem.starImage} alt=""/>
                     <img src={reviewItem.starImage} alt=""/>
                     <img src={reviewItem.starImage} alt=""/>

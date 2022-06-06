@@ -5,52 +5,13 @@ import Testimonial from "../Testimonial/Testimonial";
 import mainHeaderImage from "../img/pharmacy/pharmacy-main.png";
 import quoteLeftSolid from "../img/quote-left-solid.svg";
 import starSolid from "../img/star-solid.svg";
+import {useEffect, useState} from "react";
+import axios from "axios";
 
-const productList = [
-    {
-        imagePath:"aaa",
-        productName:"Solgar Таблетки для шкіри",
-        productPrice:"1030 грн"
-    },
-    {
-        imagePath:"aaa",
-        productName:"Solgar Таблетки для шкіри",
-        productPrice:"1040 грн"
-    },
-    {
-        imagePath:"aaa",
-        productName:"Solgar Таблетки для шкіри",
-        productPrice:"1050 грн"
-    },
-    {
-        imagePath:"aaa",
-        productName:"Solgar Таблетки для шкіри",
-        productPrice:"1060 грн"
-    },    {
-        imagePath:"aaa",
-        productName:"Solgar Таблетки для шкіри",
-        productPrice:"1030 грн"
-    },
-    {
-        imagePath:"aaa",
-        productName:"Solgar Таблетки для шкіри",
-        productPrice:"1040 грн"
-    },
-    {
-        imagePath:"aaa",
-        productName:"Solgar Таблетки для шкіри",
-        productPrice:"1050 грн"
-    },
-    {
-        imagePath:"aaa",
-        productName:"Solgar Таблетки для шкіри",
-        productPrice:"1060 грн"
-    }
-];
+
 
 const reviewsList = [
     {
-        // quoteImage:  require.context("../img/quote-left-solid.svg", false, /\.(svg)$/),
         quoteImage:  quoteLeftSolid,
         reviewerName:"Sean Parker",
         reviewText: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi, sed? Dolore, laboriosam praesentium et Lorem ipsum",
@@ -75,32 +36,55 @@ const reviewsList = [
 
 function MainPage(){
 
-    // ------------------------------------------------------------------------------------------------
-    function importAll(r) {
-        let images = {};
-        r.keys().forEach((item, index) => { images[item.replace('./', '')] = r(item); });
-        return images
+    // // ------------------------------------------------------------------------------------------------
+    // function importAll(r) {
+    //     let images = {};
+    //     r.keys().forEach((item, index) => { images[item.replace('./', '')] = r(item); });
+    //     return images
+    // }
+    // const images = importAll(require.context('../img/pharmacy', false, /\.(png|jpe?g|svg|webp)$/));
+    //
+    // // console.log(images)
+    //
+    // let counterPict = 0;
+    // let keys = Object.keys(images);
+    //
+    // // console.log(keys);
+    //
+    // keys.every(key => {
+    //     if (counterPict === productList.length) {
+    //         return false;
+    //     }
+    //     productList[counterPict].imagePath = images[key];
+    //     ++counterPict;
+    //     return true;
+    // })
+    //
+    // // console.log(productList);
+    // // ------------------------------------------------------------------------------------------------
+
+    const [productList, setProductList] = useState([]);
+    const URL_PRODUCTS = 'http://127.0.0.1:5000/api/v15/medicine';
+
+
+    useEffect(() => {
+        fetchProducts();
+    },[])
+    //React Hooks: useEffect() is called twice even if an empty array is used as an argument
+    //StrictMode renders components twice (on dev but not production)
+    //in order to detect any problems with your code and warn you about them (which can be quite useful).
+    //https://stackoverflow.com/questions/39974210/why-componentdidmount-gets-called-multiple-times-in-react-js-redux
+
+    const fetchProducts = () => {
+        axios.get(URL_PRODUCTS)
+            .then( response => {
+                console.log(response.data)
+                setProductList(response.data);
+            })
+            .catch(response => {
+                console.log("error" + response);
+            })
     }
-    const images = importAll(require.context('../img/pharmacy', false, /\.(png|jpe?g|svg|webp)$/));
-
-    // console.log(images)
-
-    let counterPict = 0;
-    let keys = Object.keys(images);
-
-    // console.log(keys);
-
-    keys.every(key => {
-        if (counterPict === productList.length) {
-            return false;
-        }
-        productList[counterPict].imagePath = images[key];
-        ++counterPict;
-        return true;
-    })
-
-    // console.log(productList);
-    // ------------------------------------------------------------------------------------------------
 
     return(
         <>
