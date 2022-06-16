@@ -103,6 +103,11 @@ function ProductDetails() {
                 if (localStorage.getItem('userId') === null){
                     throw {response:{data:"Please, log in first!"}};
                 }
+
+                if (localStorage.getItem('userStatus') === 'admin'){
+                    throw {response:{data:"Admin can't add products to order!"}};
+                }
+
                 const data = {
                     userId : localStorage.getItem('userId'),
                     shipDate : dateTime,
