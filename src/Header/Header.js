@@ -12,6 +12,7 @@ import ShoppingCart from "../ShoppingCart/ShoppingCart";
 import React from "react";
 
 import {BrowserRouter as Router, Routes, Route, Link, NavLink} from "react-router-dom";
+import Chat from "../Chat/Chat";
 
 
 
@@ -70,6 +71,7 @@ function Header(){
                 <Route path={"/cart"} element={<ShoppingCart/>}/>
                 <Route path={`/productInfo/:name/:price/:category/:manufacturer/:productDetails/:demand/:mid/:imageName`}
                        element={<ProductDetails/>}/>
+                <Route path={"/chat"} element={<Chat/>}/>
             </Routes>
         </Router>
 

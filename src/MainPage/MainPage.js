@@ -95,7 +95,7 @@ function MainPage(){
                             <h1>Howdy ho</h1>
                             <p>Our store is more than just another average online retailer. We sell not only top quality
                                 products, but give our customers a positive online shopping experience.</p>
-                            <a href="#" className="btn"><span>Explore now</span></a>
+                            <a href="/chat" className="btn"><span>Explore now</span></a>
                         </div>
                         <div className="main_header__image">
                             <img src={mainHeaderImage} alt="intro image"/>

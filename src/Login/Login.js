@@ -1,6 +1,10 @@
 // import '../SignUp/SignUp.css';
 import registerImage from '../img/pharmacy/pharmacy-main.png';
 import React from "react";
+// import socket from "../Chat/Chat";
+// import io from "socket.io-client";
+
+// const socket = io.connect('http://localhost:3001' , { transports : ['websocket'], secure: true });
 
 function Login() {
 
@@ -82,6 +86,7 @@ function Login() {
             if (localStorage.getItem('products')){
                 localStorage.removeItem('products');
             }
+            // socket.emit("disconnect-soket");
 
             window.location.reload();
         } else {

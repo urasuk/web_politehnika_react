@@ -271,7 +271,7 @@ function Account() {
                             <a href="#" className="main__pc_link side_bar_link">
 
                             </a>
-                            <a href="#" className="main__people_link side_bar_link">
+                            <a href="/chat" className="main__people_link side_bar_link">
 
                             </a>
                             <a href="#" className="main__cloud_link side_bar_link">
